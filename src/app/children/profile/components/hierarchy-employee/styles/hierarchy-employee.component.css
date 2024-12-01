@@ -1,0 +1,216 @@
+.tree-container {
+    position: relative;
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: visible;
+    margin-top: 168px;
+    box-sizing: border-box;
+}
+
+.tree {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0) scale(1);
+    transform-origin: top left;
+    transition: transform 0.2s ease-in-out;
+}
+
+.card-header {
+    /*padding: 0.35rem 1.25rem;*/
+}
+
+.tree ul {
+    position: relative;
+    padding: 1em 0;
+    white-space: nowrap;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.tree ul::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.tree li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 1em 0.5em 0 0.5em;
+}
+
+.tree li::before,
+.tree li::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50%;
+    border-top: 2px solid var(--text-black);
+    width: 50%;
+    height: 1em;
+}
+
+.tree li::after {
+    right: auto;
+    left: 50%;
+    border-left: 2px solid var(--text-black);
+}
+
+.tree li:only-child::after,
+.tree li:only-child::before {
+    display: none;
+}
+
+.tree li:only-child {
+    padding-top: 0;
+}
+
+.tree li:first-child::before,
+.tree li:last-child::after {
+    border: 0 none;
+}
+
+.tree li:last-child::before {
+    border-right: 2px solid var(--text-black);
+}
+
+.tree ul ul::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    border-left: 2px solid var(--text-black);
+    width: 0;
+    height: 1em;
+}
+
+h2 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: normal;
+    min-height: 20px;
+    white-space: normal;
+}
+
+.node {
+    width: 380px;
+    height: 100px;
+    display: inline-block;
+    padding: 12px 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    text-align: left;
+    position: relative;
+
+    cursor: pointer;
+}
+
+.tree li .node:hover,
+.tree li .node:hover + ul li .node {
+    background: #f5f5f5;
+    color: #000;
+}
+
+/* Connector styles on hover */
+
+.tree li .node:hover + ul li::after,
+.tree li .node:hover + ul li::before,
+.tree li .node:hover + ul::before,
+.tree li .node:hover + ul ul::before {
+    border-color: var(--text-black);
+}
+
+.tree li:first-child::before {
+    content: '';
+    text-align: right;
+    padding-left: 5px;
+    right: 53%;
+    top: -2px;
+    vertical-align: top;
+}
+
+.tree li:last-child::after {
+    content: '';
+    text-align: left;
+    padding-left: 5px;
+    left: 53%;
+    top: -2px;
+    bottom: 50%;
+}
+
+.info {
+    display: flex;
+    gap: 14px;
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+}
+
+.name {
+    height: 76px;
+}
+
+.desc {
+    margin-left: auto;
+}
+
+.type {
+    margin-top: auto;
+    color: #999;
+}
+
+.info-employee {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+
+    max-width: 380px;
+    max-height: 75px;
+
+    text-align: left;
+}
+
+.position {
+    color: #999;
+}
+
+.highlighted {
+    width: 380px;
+    height: 100px;
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    text-align: left;
+    position: relative;
+
+    cursor: pointer;
+    background: #232323;
+}
+
+.highlighted .desktop-headline-hierarchy {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 140%;
+    letter-spacing: 0.01em;
+    color: #fff;
+}
+
+.highlighted .desktop-body-2 {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0.01em;
+    color: #999;
+}
