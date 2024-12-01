@@ -1,0 +1,19 @@
+<div class="global-container">
+    <div class="segment-control container">
+        <button [class.segment-control-active]="statesSegmentControl['isSearchClicked']"
+                [class.segment-control-disabled]="!statesSegmentControl['isSearchClicked']"
+                class="desktop-body-2"
+                routerLink="/home/search"
+                routerLinkActive>
+            Поиск
+        </button>
+
+        <button [class.segment-control-active]="statesSegmentControl['isHierarchyClicked']"
+                [class.segment-control-disabled]="!statesSegmentControl['isHierarchyClicked']"
+                class="desktop-body-2"
+                routerLink="/home/hierarchy"
+                routerLinkActive>
+            Иерархия
+        </button>
+    </div>
+</div>
