@@ -1,0 +1,347 @@
+/* Font */
+
+@font-face {
+    font-family: 'Vela Sans';
+    src: url('/assets/fonts/VelaSans-Light.woff2') format('woff2'),
+    url('/assets/fonts/VelaSans-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vela Sans';
+    src: url('/assets/fonts/VelaSans-Regular.woff2') format('woff2'),
+    url('/assets/fonts/VelaSans-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vela Sans';
+    src: url('/assets/fonts/VelaSans-Medium.woff2') format('woff2'),
+    url('/assets/fonts/VelaSans-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vela Sans';
+    src: url('/assets/fonts/VelaSans-SemiBold.woff2') format('woff2'),
+    url('/assets/fonts/VelaSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Vela Sans';
+    src: url('/assets/fonts/VelaSans-Bold.woff2') format('woff2'),
+    url('/assets/fonts/VelaSans-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    /* Font-family */
+
+    --font-family: "Vela Sans", sans-serif;
+
+    /* Color */
+
+    --text-black: #232323;
+    --text-white: #fff;
+    --text-secondary-grey: #999999;
+    --text-disable-light-grey: #c2c2c2;
+    --bg-red: #f93232;
+    --bg-notifications: #fff5f5;
+    --bg-white: #fff;
+    --bg-grey: #F5F5F5;
+    --bg-sidebar: #fafafa;
+    --border-default: #ebebeb;
+    --border-hover: #e0e0e0;
+    --border-focused: #232323;
+    --border-notifications: #ffd8d8;
+    --primary-button-default: #232323;
+    --primary-button-hover: #404040;
+    --primary-button-focus: #5e5e5e;
+    --secondary-button-default: #f5f5f5;
+    --secondary-button-hover: #ebebeb;
+    --secondary-button-focus: #e0e0e0;
+    --button-disabled: #f5f5f5;
+
+    /* Desktop font sizes */
+
+    --font-headline-1-size: 56px;
+    --font-headline-1-line-height: 130%;
+    --font-headline-2-size: 48px;
+    --font-headline-2-line-height: 130%;
+    --font-headline-3-size: 40px;
+    --font-headline-3-line-height: 130%;
+    --font-headline-4-size: 32px;
+    --font-headline-4-line-height: 130%;
+    --font-headline-5-size: 26px;
+    --font-headline-5-line-height: 140%;
+    --font-headline-6-size: 20px;
+    --font-headline-6-line-height: 140%;
+
+    --font-body-1-size: 20px;
+    --font-body-1-line-height: 160%;
+    --font-body-2-size: 16px;
+    --font-body-2-line-height: 160%;
+    --font-body-3-size: 18px;
+    --font-body-3-line-height: 160%;
+
+    --font-description-employee-size: 14px;
+    --font-description-employee-line-height: 160%;
+    --font-description-size: 12px;
+    --font-description-line-height: 160%;
+
+    /* Letter spacing */
+
+    --global-letter-spacing: 0.01em;
+
+    /* Font weight */
+
+    --font-weight-bold: 700;
+    --font-weight-semibold: 600;
+    --font-weight-medium: 500;
+    --font-weight-normal: 400;
+    --font-weight-light: 300;
+}
+
+/* Basic style */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family), sans-serif;
+}
+
+/* Desktop font headlines and body */
+
+.desktop-headline-1 {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-headline-1-size);
+    line-height: var(--font-headline-1-line-height);
+}
+
+.desktop-headline-2 {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-headline-2-size);
+    line-height: var(--font-headline-2-line-height);
+}
+
+.desktop-headline-3 {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-headline-3-size);
+    line-height: var(--font-headline-3-line-height);
+}
+
+.desktop-headline-4 {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-headline-4-size);
+    line-height: var(--font-headline-4-line-height);
+}
+
+.desktop-headline-5 {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-headline-5-size);
+    line-height: var(--font-headline-5-line-height);
+}
+
+.desktop-headline-6 {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-headline-6-size);
+    line-height: var(--font-headline-6-line-height);
+}
+
+.desktop-body-1 {
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-body-1-size);
+    line-height: var(--font-body-1-line-height);
+}
+
+.desktop-body-2 {
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-body-2-size);
+    line-height: var(--font-body-2-line-height);
+}
+
+.desktop-body-3 {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-body-3-size);
+    line-height: var(--font-body-3-line-height);
+}
+
+.desktop-headline-hierarchy {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-body-3-size);
+    line-height: var(--font-headline-5-line-height);
+}
+
+.desktop-description {
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-description-size);
+    line-height: var(--font-description-line-height);
+}
+
+.desktop-description-path {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-description-size);
+    line-height: var(--font-description-line-height);
+}
+
+.desktop-description-employee {
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-description-employee-size);
+    line-height: var(--font-description-employee-line-height);
+    color: var(--primary-button-focus);
+}
+
+.desktop-description-hierarchy {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 250%;
+    letter-spacing: 0.01em;
+    color: #232323;
+}
+
+.desktop-headline-1,
+.desktop-headline-2,
+.desktop-headline-3,
+.desktop-headline-4,
+.desktop-headline-5,
+.desktop-headline-6,
+.desktop-body-1,
+.desktop-body-2,
+.desktop-body-3,
+.desktop-description,
+.desktop-description-path,
+.desktop-headline-hierarchy,
+.desktop-description-hierarchy {
+    font-family: var(--font-family), sans-serif;
+    letter-spacing: var(--global-letter-spacing);
+    color: var(--text-black);
+}
+
+.desktop-primary-button-text-active,
+.desktop-secondary-button-text-active,
+.desktop-button-text-disabled {
+    font-family: var(--font-family), sans-serif;
+    letter-spacing: var(--global-letter-spacing);
+}
+
+/* Button style */
+
+.primary-button {
+    border: 1px solid #232323;
+    border-radius: 10px;
+    padding: 16px;
+    background: #ebebeb;
+}
+
+.primary-button:hover {
+    background: #e0e0e0;
+
+}
+
+.primary-button:active {
+    background: #404040;
+}
+
+.segment-control {
+    display: flex;
+    gap: 4px;
+
+    box-shadow: 0 4px 8px 0 rgba(35, 35, 35, 0.16);
+    background: var(--text-black);
+
+    border-radius: 44px;
+    padding: 4px;
+    width: 272px;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.segment-control-active {
+    background: var(--text-white);
+
+    border-radius: 37px;
+    border: none;
+    padding: 10px 32px;
+    width: 139px;
+
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.segment-control-disabled {
+    border-radius: 83px;
+    padding: 10px 32px;
+    width: 139px;
+
+    background: none;
+    border: none;
+    color: var(--text-white);
+
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.4s ease;
+}
+
+.segment-control-disabled:hover {
+    background: var(--primary-button-hover);
+
+    transition: background 0.4s ease;
+}
+
+.search-container {
+    background: var(--text-black);
+    border-radius: 12px;
+    padding: 2px;
+    max-width: 826px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 2px;
+}
+
+.search-input {
+    background: var(--bg-white);
+    border: none;
+    border-radius: 10px;
+
+    padding: 10px 20px;
+
+    max-width: 700px;
+    width: 100%;
+    height: 40px;
+
+    flex: 1;
+}
+
+.search-input::placeholder {
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-body-2-size);
+    line-height: var(--font-body-2-line-height);
+    letter-spacing: var(--global-letter-spacing);
+    color: var(--text-secondary-grey);
+}
+
+.search-input:focus {
+    outline: none;
+}
+
+.search-button {
+    background: var(--text-black);
+    border: none;
+
+    border-radius: 10px;
+    padding: 16px;
+    max-width: 88px;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
