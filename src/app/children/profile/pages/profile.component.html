@@ -1,0 +1,88 @@
+<app-segment-control/>
+
+<div class="global-container-profile">
+    <div class="full-name">
+        <div class="ellipse"></div>
+        <div class="desktop-headline-4 name">{{ employeeDetails?.name }}</div>
+    </div>
+
+    <div class="container">
+        <div class="first-section-profile">
+            <div class="info">
+                <div class="info-item">
+                    <p class="desktop-headline-6">{{ employeeDetails?.position?.name }}</p>
+                    <p class="desktop-body-2 desc">Должность</p>
+                </div>
+                <div class="info-item">
+                    <p class="desktop-headline-6">{{ employeeDetails?.position?.employee_role }}</p>
+                    <p class="desktop-body-2 desc">Роль</p>
+                </div>
+                <div class="info-item">
+                    <p class="desktop-headline-6">{{ employeeDetails?.phone }}</p>
+                    <p class="desktop-body-2 desc">Телефон</p>
+                </div>
+                <div class="info-item">
+                    <p class="desktop-headline-6">{{ employeeDetails?.email }}</p>
+                    <p class="desktop-body-2 desc">Электронная почта</p>
+                </div>
+                <div class="info-item">
+                    <p class="desktop-headline-6">{{ employeeDetails?.city }}</p>
+                    <p class="desktop-body-2 desc">Город</p>
+                </div>
+                <div class="info-item">
+                    <p class="desktop-headline-6">{{ employeeDetails?.address }}</p>
+                    <p class="desktop-body-2 desc">Адрес</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="second-section-profile">
+            <div class=unit-type>
+                <p class="desktop-headline-6">{{ employeeDetails?.unit?.name }}</p>
+                <p class="desktop-body-2 desc">Подразделение</p>
+            </div>
+
+            <div *ngIf="employeeDetails?.functional_manager && employeeDetails?.direct_managers"
+                 class="managers">
+                <div class="manager">
+                    <div class="manager-info">
+                        <p class="desktop-headline-6">{{ employeeDetails?.functional_manager?.name }}</p>
+                        <p class="desktop-body-2 desc">Функциональный руководитель</p>
+                    </div>
+
+                    <button (click)="navigateToProfile(employeeDetails?.functional_manager?.id)"
+                            (mousedown)="isClickedFirst = true"
+                            (mouseleave)="isClickedFirst = false"
+                            (mouseup)="isClickedFirst = false"
+                            class="manager-button primary-button">
+                        <img
+                            [src]="isClickedFirst ? 'assets/arrow-narrow-up-right-white.svg' : 'assets/arrow-narrow-up-right.svg'"
+                            alt="кнопка"
+                            height="24"
+                            width="24">
+                    </button>
+                </div>
+                <div *ngFor="let direct_manager of employeeDetails?.direct_managers" class="manager">
+                    <div class="manager-info">
+                        <p class="desktop-headline-6">{{ direct_manager.name }}</p>
+                        <p class="desktop-body-2 desc">Непосредственный руководитель</p>
+                    </div>
+
+                    <button (click)="navigateToProfile(direct_manager.id)"
+                            (mousedown)="isClickedSecond = true"
+                            (mouseleave)="isClickedSecond = false"
+                            (mouseup)="isClickedSecond = false"
+                            class="manager-button primary-button">
+                        <img
+                            [src]="isClickedSecond ? 'assets/arrow-narrow-up-right-white.svg' : 'assets/arrow-narrow-up-right.svg'"
+                            alt="кнопка"
+                            height="24"
+                            width="24">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-hierarchy-employee [id]="selectedEmployee"/>
