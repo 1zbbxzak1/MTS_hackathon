@@ -1,0 +1,225 @@
+.search-global-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    min-height: 100vh;
+    height: 100%;
+
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.search-section.results-visible {
+    margin-top: 190px;
+    margin-bottom: 28px;
+}
+
+.tags {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+
+    margin-bottom: 14px;
+    gap: 14px;
+
+    max-width: 826px;
+    width: 100%;
+}
+
+.tag {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--secondary-button-default);
+    border-radius: 8px;
+    padding: 5px 5px 5px 12px;
+    gap: 12px;
+}
+
+.tag .remove-tag {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+
+    border-radius: 3px;
+    padding: 4px;
+}
+
+.tag .remove-tag:hover {
+    background: var(--secondary-button-hover);
+}
+
+.tag .remove-tag:active {
+    background: var(--secondary-button-focus);
+}
+
+.tag-animate-in {
+    animation: tagFadeIn 0.3s ease forwards;
+}
+
+.tag-animate-out {
+    animation: tagFadeOut 0.3s ease forwards;
+}
+
+.suggestions-list {
+    border-radius: 10px;
+    padding: 4px;
+    box-shadow: 0 4px 8px 0 rgba(35, 35, 35, 0.16);
+    background: var(--text-white);
+
+    max-height: 200px;
+    width: 826px;
+    overflow-y: auto;
+    z-index: 10;
+
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.suggestions-list.show {
+    animation: dropdownFadeIn 0.6s ease forwards;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.suggestions-list.hide {
+    animation: dropdownFadeOut 0.6s ease forwards;
+    pointer-events: none;
+}
+
+.suggestions-list div {
+    padding: 10px 16px;
+    height: 26px;
+    border-radius: 6px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.type {
+    color: var(--text-secondary-grey);
+}
+
+.suggestions-list div:hover {
+    background: var(--secondary-button-default);
+}
+
+.suggestions-list div:active {
+    background: var(--secondary-button-focus);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(35, 35, 35, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay .spinner {
+    border: 4px solid var(--bg-grey);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-left-color: var(--text-black);
+    animation: spin 1s linear infinite;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.spinner {
+    border: 4px solid var(--bg-grey);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-left-color: var(--text-black);
+    animation: spin 1s linear infinite;
+}
+
+.results-tree {
+    max-width: 826px;
+    width: 100%;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes tagFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes tagFadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes dropdownFadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}

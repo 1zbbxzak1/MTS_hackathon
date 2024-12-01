@@ -1,0 +1,57 @@
+<div class="search-global-container">
+    <app-segment-control/>
+
+    <div [ngClass]="{'results-visible': isLoading || searchResults.length > 0}" class="search-section">
+        <div class="tags">
+            <!-- Отображение тегов -->
+            <span *ngFor="let suggestion of selectedSuggestions; let i = index"
+                  [ngClass]="{'tag-animate-in': true}"
+                  class="tag desktop-body-2">
+                        {{ suggestion.name }}
+                <span (click)="onRemoveTag(i)" class="remove-tag">
+                            <img alt="Удалить" height="18" ngSrc="assets/x-close.svg" width="18">
+                        </span>
+                    </span>
+        </div>
+        <div class="search-container">
+            <!-- Поле ввода -->
+            <input (input)="onSearchInput()"
+                   (keydown.enter)="onTagCreate($event)"
+                   [(ngModel)]="searchQuery"
+                   class="search-input desktop-body-2"
+                   placeholder="Найти">
+
+            <div class="search-button">
+                <img alt="Поиск" height="24" ngSrc="assets/search.svg" width="24">
+            </div>
+        </div>
+
+        <!-- Выпадающий список подсказок -->
+        <div *ngIf="filteredSuggestions.length > 0"
+             [class.hide]="!isDropdownVisible"
+             [class.show]="isDropdownVisible"
+             class="suggestions-list">
+            <div (click)="onSuggestionClick(suggestion)"
+                 *ngFor="let suggestion of filteredSuggestions; let i = index"
+                 [id]="'suggestion-' + i">
+                <p class="desktop-body-2">{{ suggestion.name }}</p>
+                <p class="desktop-body-2 type">{{ suggestion.type }}</p>
+            </div>
+        </div>
+
+        <!-- Дерево результатов -->
+        <div *ngIf="!isLoading && searchResults.length > 0" class="results-tree">
+            <app-view-list [data]="searchResults"></app-view-list>
+        </div>
+    </div>
+
+    <!-- Затемнение и дополнительный спиннер -->
+    <div *ngIf="isTagLoading" class="overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Анимация загрузки -->
+    <div *ngIf="isLoading" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+</div>
