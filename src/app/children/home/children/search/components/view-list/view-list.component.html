@@ -1,0 +1,25 @@
+<div *ngFor="let item of data" class="item-search">
+    <!-- Путь с разделителями -->
+    <p class="desktop-description-path path">
+        <ng-container *ngFor="let segment of getPath(item)">
+            <span>{{ segment.name }}</span>
+            <img *ngIf="segment.separator" alt="arrow" height="17" ngSrc="assets/chevron-right.svg" width="16"/>
+        </ng-container>
+    </p>
+
+    <!-- Список сотрудников -->
+    <ul class="employee">
+        <li (click)="navigateToProfile(employee.id)" *ngFor="let employee of item.employees" class="employee-item">
+            <div class="ellipse"></div>
+            <div>
+                <p class="desktop-body-3">{{ employee.name }}</p>
+                <p class="desktop-body-2">{{ employee.position.name }}</p>
+            </div>
+
+            <div class="employee-item-end">
+                <p class="desktop-description-employee">{{ employee.email }}</p>
+                <p class="desktop-description-employee">{{ employee.city }}</p>
+            </div>
+        </li>
+    </ul>
+</div>
