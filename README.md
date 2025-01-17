@@ -106,3 +106,8 @@ http://localhost:4200
 ```bash
 Ctrl + C
 ```
+
+## Результаты хакатона
+
+### Диплом
+[![Диплом](https://raw.githubusercontent.com/1zbbxzak1/MTS_hackathon/refs/heads/master/Хакатон%20Hack%26Change%202024%20-%20Диплом%20Полякова%20Юлия.jpg)](https://raw.githubusercontent.com/1zbbxzak1/MTS_hackathon/refs/heads/master/Хакатон%20Hack%26Change%202024%20-%20Диплом%20Полякова%20Юлия.jpg)
